@@ -279,11 +279,14 @@ else
 endif
 
 
+autocmd VimEnter * NERDTree  " 启动vim自动打开NERDTree
+autocmd VimEnter * wincmd p  " 打开新的buffer时自动定位到编辑窗口
+
 set backspace=2              " 设置退格键可用
 set autoindent               " 自动对齐
 set ai!                      " 设置自动缩进
 set smartindent              " 智能自动缩进
-set relativenumber           " 开启相对行号
+" set relativenumber           " 开启相对行号
 set nu!                      " 显示行号
 set ruler                    " 右下角显示光标位置的状态行
 set incsearch                " 开启实时搜索功能
@@ -327,11 +330,11 @@ endif
 " 使用 GUI 界面时的设置
 if g:isGUI
   " 启动时自动最大化窗口
-  if g:isWIN
-    au GUIEnter * simalt ~x
-  endif
-  "winpos 20 20              " 指定窗口出现的位置，坐标原点在屏幕左上角
-  "set lines=20 columns=90   " 指定窗口大小，lines 为高度，columns 为宽度
+  "if g:isWIN
+  "  au GUIEnter * simalt ~x
+  "endif
+  winpos 20 20              " 指定窗口出现的位置，坐标原点在屏幕左上角
+  set lines=35 columns=160   " 指定窗口大小，lines 为高度，columns 为宽度
   set guioptions+=c          " 使用字符提示框
   set guioptions-=m          " 隐藏菜单栏
   set guioptions-=T          " 隐藏工具栏
